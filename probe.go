@@ -3,9 +3,8 @@ package main
 import (
 	"log"
 	"os"
-	r "gopkg.in/gorethink/gorethink.v2"
+	r "gopkg.in/gorethink/gorethink.v4"
 )
-
 
 func main() {
 
@@ -35,6 +34,4 @@ func main() {
 	}
 
 	log.Printf("A-OK!")
-
 }
-
