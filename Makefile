@@ -1,4 +1,4 @@
-IMAGE=neutron37/k8s-rethinkdb
+IMAGE=indieops/k8s-rethinkdb
 TAG=2.3.6-v1
 
 probe:
