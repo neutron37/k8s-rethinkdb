@@ -2,6 +2,8 @@
 
 This is the Docker image that's the basis for a [Kubernetes RethinkDB Cluster](https://github.com/rosskukulinski/kubernetes-rethinkdb-cluster).
 
+Fork of https://github.com/rosskukulinski/rethinkdb-kubernetes updated by indieops.
+
 ## Dependencies (Updated 2018-08-19)
 
 * Dockerfile
