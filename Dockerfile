@@ -1,15 +1,17 @@
-FROM rethinkdb:2.3.5
+FROM rethinkdb:2.3.6
 
-MAINTAINER Ross Kukulinski <ross@kukulinski.com>
+MAINTAINER Neutron37 <neutron37@indieops.berlin>
 
 RUN apt-get update && \
     apt-get install -yq curl && \
     rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/*
 
-ADD http://stedolan.github.io/jq/download/linux64/jq /usr/bin/jq
+# https://stedolan.github.io/jq/
+ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/bin/jq
 RUN chmod +x /usr/bin/jq
 
-ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /usr/local/bin/dumb-init
+# https://github.com/Yelp/dumb-init
+ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 /usr/local/bin/dumb-init
 RUN chmod +x /usr/local/bin/dumb-init
 
 COPY ./run.sh ./probe ./ready-probe.sh /
