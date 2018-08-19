@@ -1,5 +1,5 @@
-IMAGE=rosskukulinski/rethinkdb-kubernetes
-TAG=2.3.5-v1
+IMAGE=neutron37/k8s-rethinkdb
+TAG=2.3.6-v1
 
 probe:
 	./build-probe.sh
