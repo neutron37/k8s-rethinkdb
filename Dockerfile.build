@@ -1,7 +1,5 @@
-FROM golang:1.6
-MAINTAINER Chris Dornsife <chris@applariat.com>
-
-# Build container to have a consistent go build environment
+FROM golang:1.10.3
+MAINTAINER Neutron37 <neutron37@indieops.berlin>
 
 COPY . /go/src/probe
 WORKDIR /go/src/probe
