@@ -39,7 +39,7 @@ if [[ -n "${KUBERNETES_SERVICE_HOST}" && -z "${USE_SERVICE_LOOKUP}" ]]; then
   token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
   # try to pick up first different ip from endpoints
   IP=$(curl -s ${URL} --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt --header "Authorization: Bearer ${token}" \
-    | jq -s -r --arg h "${POD_IP}" '.[0].subsets | .[].addresses | [ .[].ip ] | map(select(. != $h)) | .[0]') || exit 1
+    | jq -s -r --arg h "${POD_IP}" '.[0].subsets | .[].addresses | [ .[]?.ip ] | map(select(. != $h)) | .[0]') || exit 1
   [[ "${IP}" == null ]] && IP=""
   JOIN_ENDPOINTS="${IP}"
 else
